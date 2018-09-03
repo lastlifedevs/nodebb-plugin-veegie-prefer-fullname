@@ -1,5 +1,7 @@
 "use strict";
 
+var async = require('async');
+
 var user = module.parent.require('./user');
 var controllers = require('./lib/controllers');
 var preferFullname = {};
