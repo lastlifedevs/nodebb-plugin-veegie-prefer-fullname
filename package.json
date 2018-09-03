@@ -1,0 +1,26 @@
+{
+  "name": "nodebb-plugin-veegie-prefer-fullname",
+  "version": "0.0.1",
+  "description": "A simple plugin to expose the Full Name field in a few extra places on NodeBB.",
+  "main": "library.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lastlifedevs/nodebb-plugin-veegie-prefer-fullname"
+  },
+  "keywords": [
+    "nodebb",
+    "plugin"
+  ],
+  "author": {
+    "name": "veegie",
+    "email": "veegie@last-life.net"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lastlifedevs/nodebb-plugin-veegie-prefer-fullname/issues"
+  },
+  "readmeFilename": "README.md",
+  "nbbpm": {
+    "compatibility": "^1.0.0"
+  }
+}
