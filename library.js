@@ -33,10 +33,8 @@ preferFullname.getFullname = function (data, callback) {
 	if (data.uid === 0) {
 		callback(null, data);
 	} else {
-		data.teasers.foreach(function(teaser) {
-			console.log(teaser);
-			teaser.user.fullname = user.getUserField(teaser.user.uid, 'fullname', callback);
-		});
+		console.log(data);
+		callback();
 	}
 }
 
