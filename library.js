@@ -34,9 +34,23 @@ preferFullname.getFullname = function (data, callback) {
 	if (data.uid === 0) {
 		callback(null, data);
 	} else {
-		async.each(data, function(teaser, callback) {
-			teaser.user.fullname = user.getUserField(teaser.uid, 'fullname', callback);
-		}, callback);
+		let uids = [];
+		for (let i=0; i < data.teasers.length; i++) {
+			uids.push(data.teasers[i].uid);
+		}
+		async.waterfall([
+			function(next) {
+				user.getUsersFields(uids, ['fullname'], next);
+			},
+			function(userData, next) {
+				for (let i=0; i < data.teasers.length; i++) {
+					data.teasers[i].user.fullname = userData[i].fullname;
+				}
+				next();
+			}
+		], function() {
+			callback(null, data);
+		});
 	}
 }
 
