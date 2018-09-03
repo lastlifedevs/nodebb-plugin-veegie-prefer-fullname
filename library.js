@@ -28,13 +28,13 @@ preferFullname.addAdminNavigation = function(header, callback) {
 	callback(null, header);
 };
 
-
 preferFullname.getFullname = function (data, callback) {
 	if (data.uid === 0) {
 		callback(null, data);
 	} else {
-		console.log(data);
-		callback();
+		async.each(data, function(teaser, callback) {
+			teaser.user.fullname = user.getUserField(teaser.uid, 'fullname', callback);
+		}, callback);
 	}
 }
 
