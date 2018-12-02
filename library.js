@@ -1,7 +1,7 @@
 "use strict";
 
 var async = require('async');
-var user = module.parent.require('./user');
+var user = require.main.require('./src/user');
 var preferFullname = {};
 
 preferFullname.getFullname = function (data, callback) {
