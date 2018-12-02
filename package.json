@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-veegie-prefer-fullname",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A simple plugin to expose the Full Name field in a few extra places on NodeBB.",
   "main": "library.js",
   "repository": {
